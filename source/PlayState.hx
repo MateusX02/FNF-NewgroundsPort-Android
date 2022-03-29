@@ -2724,6 +2724,32 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('hey', true);
 			dad.playAnim('cheer', true);
 		}
+		
+		switch (SONG.song.toLowerCase()) {
+    case "guns" :
+        (curBeat);
+        if (this.curBeat > 224 && this.curBeat < 256) {
+            this.dad.velocity.y = -100;
+            this.camFollow.velocity.y = -100;
+        }
+        if (this.curBeat > 256 && this.curBeat < 288) {
+            this.dad.velocity.y = 0;
+            this.boyfriend.velocity.y = -100;
+        }
+        if (this.curBeat > 288 && this.curBeat < 320) {
+            this.boyfriend.velocity.y = 0;
+            this.dad.velocity.y = -100;
+        }
+        if (this.curBeat > 320 && this.curBeat < 352) {
+            this.dad.velocity.y = 0;
+            this.boyfriend.velocity.y = -100;
+        }
+        if (this.curBeat > 352) {
+            this.dad.velocity.y = 0;
+            this.boyfriend.velocity.y = 0;
+            this.camFollow.velocity.y = 0;
+        }
+}
 
 		foregroundSprites.forEach(function(spr:BGSprite)
 		{
